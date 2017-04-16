@@ -3,6 +3,17 @@
  * Copyright 2014-2015 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
+// Check for jQuery.
+if (typeof(jQuery) === 'undefined') {
+  var jQuery;
+  // Check if require is a defined function.
+  if (typeof(require) === 'function') {
+    jQuery = $ = require('jquery');
+  // Else use the dollar sign alias.
+  } else {
+    jQuery = $;
+  }
+}
 ;/*
  * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
  *
